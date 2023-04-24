@@ -1,0 +1,12 @@
+.buttonStyle {
+    @apply flex justify-center items-center shadow-md drop-shadow-md filter w-9 md:w-20 h-9 md:h-20 rounded-full border-2 border-white;
+    &.activeAddition {
+        @apply bg-gray-800 opacity-50
+    }
+    
+    &.unActiveAddition {
+        @apply hover:border-gray-600
+    }
+}
+
+ 
