@@ -33,7 +33,7 @@ const TextureModel = () => {
 
   return (
     <primitive
-      position={[-0.01, -0.01, 0.005]}
+      position={[-0.01, 0.39, 0.005]}
       scale={[1.03, 1.05, 1]}
       object={model}
     />

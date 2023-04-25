@@ -7,13 +7,14 @@ import { ControlContext } from 'provider/ControlProvider';
 import { Suspense } from 'react';
 import BackGround from 'componentsFor3D/BackGround';
 import OverlayTexture from 'componentsFor3D/OverlayTexture';
+import Navigation from 'components/Navigation';
 
 export default function Configurator() {
   const ContextBridge = useContextBridge(ControlContext);
   return (
     <div className={'h-screen w-screen fixed ios'}>
       <Suspense fallback={null}>
-        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 2.3] }}>
+        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 2] }}>
           <ContextBridge>
             <OverlayTexture />
             <BackGround />
@@ -37,6 +38,7 @@ export default function Configurator() {
           className='h-full w-auto '
         />
       </Suspense>
+      <Navigation />
     </div>
   );
 }

@@ -13,7 +13,7 @@ const BasicModel = () => {
   );
   // rest of your component code here
   return (
-    <mesh position={[0, 0, 0.07]}>
+    <mesh position={[0, 0.4, 0.07]}>
       <planeBufferGeometry args={[2.1, 2.1, 1]} />
       <meshStandardMaterial
         map={texture}

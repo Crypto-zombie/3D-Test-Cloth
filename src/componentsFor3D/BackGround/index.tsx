@@ -11,7 +11,7 @@ const BackGround = () => {
   );
   // rest of your component code here
   return (
-    <mesh position={[0, 0, 0.069]}>
+    <mesh position={[0, 0.4, 0.069]}>
       <planeBufferGeometry args={[2.1, 2.1, 1]} />
       <meshStandardMaterial
         map={texture}
