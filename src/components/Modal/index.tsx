@@ -3,7 +3,7 @@ import { ControlContext } from 'provider/ControlProvider';
 import React, { useContext, useState } from 'react';
 
 export default function Modal() {
-  const { scale, navIndex, setScale, sh, setSH, hsv, setHSV } =
+  const { scale, navIndex, setScale, sh, setSH, hsv, setHSV, setDegree } =
     useContext(ControlContext);
   console.log('hsv', hsv);
   return navIndex === 3 ? (
@@ -95,6 +95,41 @@ export default function Modal() {
       <button
         className='border border-gray-400 hover:bg-gray-200 rounded-sm p-2 w-full text-cyan-500'
         onClick={() => setSH([100, 100])}
+      >
+        Reset
+      </button>
+    </div>
+  ) : navIndex === 0 ? (
+    <div className='absolute top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
+      <div className='flex justify-center items-center'>
+        <button
+          className='border border-gray-300 py-3 w-11 text-center hover:bg-slate-100'
+          onClick={() => setDegree(0)}
+        >
+          0°
+        </button>
+        <button
+          className='border border-gray-300 py-3  w-11 text-center hover:bg-slate-100'
+          onClick={() => setDegree(Math.PI / 2)}
+        >
+          90°
+        </button>
+        <button
+          className='border border-gray-300 py-3  w-11 text-center hover:bg-slate-100'
+          onClick={() => setDegree(-Math.PI / 2)}
+        >
+          -90°
+        </button>
+        <button
+          className='border border-gray-300 py-3  w-11 text-center hover:bg-slate-100'
+          onClick={() => setDegree(Math.PI)}
+        >
+          180°
+        </button>
+      </div>
+      <button
+        className='border border-gray-400 hover:bg-gray-200 rounded-sm p-2 w-full text-cyan-500'
+        onClick={() => setDegree(0)}
       >
         Reset
       </button>

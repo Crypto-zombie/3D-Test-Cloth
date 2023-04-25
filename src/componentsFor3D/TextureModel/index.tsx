@@ -44,7 +44,7 @@ function hslToHex(h: number, s: number, l: number): string {
   return `#${hex}`;
 }
 const TextureModel = () => {
-  const { scale, hsv } = useContext(ControlContext);
+  const { scale, hsv, degree } = useContext(ControlContext);
   const model = useLoader(
     OBJLoader,
     '/assets/silk_scarf/silk_scarf_3d_model.obj'
@@ -59,13 +59,14 @@ const TextureModel = () => {
     newTexture.repeat.set(2 * (scale / 100), 0.8 * (scale / 100));
     newTexture.wrapS = THREE.RepeatWrapping;
     newTexture.wrapT = THREE.RepeatWrapping;
+    newTexture.rotation = degree;
     return new THREE.MeshBasicMaterial({
       map: newTexture,
       lightMap: newTexture,
       transparent: true,
       color: hslToHex(hsv[0], hsv[1], hsv[2]),
     });
-  }, [texture, scale, hsv]);
+  }, [texture, scale, hsv, degree]);
 
   model.traverse((child: any) => {
     if (child.isMesh) {
