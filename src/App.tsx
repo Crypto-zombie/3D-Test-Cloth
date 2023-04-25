@@ -6,7 +6,7 @@ function App() {
   return (
     <ControlProvider>
       <Configurator />
-      <Home />
+      {/* <Home /> */}
     </ControlProvider>
   );
 }
