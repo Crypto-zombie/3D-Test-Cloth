@@ -1,9 +1,11 @@
 import { useLoader } from '@react-three/fiber';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import * as THREE from 'three';
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
+import { ControlContext } from 'provider/ControlProvider';
 
 const BasicModel = () => {
+  const { sh } = useContext(ControlContext);
   const texture = useMemo(
     () =>
       new THREE.TextureLoader().load(
@@ -19,7 +21,7 @@ const BasicModel = () => {
         map={texture}
         lightMap={texture}
         transparent
-        opacity={0.4}
+        opacity={sh[0] / 500}
       />
     </mesh>
   );

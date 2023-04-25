@@ -6,11 +6,13 @@ type ContextProps = {
   showMenu: boolean;
   scale: number;
   hsv: Array<number>;
+  sh: Array<number>;
   setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
   setControlStatus: React.Dispatch<React.SetStateAction<boolean>>;
   setNavIndex: React.Dispatch<React.SetStateAction<number>>;
   setScale: React.Dispatch<React.SetStateAction<number>>;
   setHSV: React.Dispatch<React.SetStateAction<Array<number>>>;
+  setSH: React.Dispatch<React.SetStateAction<Array<number>>>;
 };
 
 type Props = {
@@ -23,11 +25,13 @@ export const ControlContext = createContext<ContextProps>({
   showMenu: true,
   scale: 0,
   hsv: [],
+  sh: [],
   setShowMenu: () => {},
   setControlStatus: () => {},
   setNavIndex: () => {},
   setScale: () => {},
   setHSV: () => {},
+  setSH: () => {},
 });
 
 export const ControlProvider = ({ children }: Props) => {
@@ -36,6 +40,7 @@ export const ControlProvider = ({ children }: Props) => {
   const [showMenu, setShowMenu] = useState(false);
   const [scale, setScale] = useState<number>(100);
   const [hsv, setHSV] = useState<Array<number>>([225, 35, 80]);
+  const [sh, setSH] = useState<Array<number>>([100, 100]);
   return (
     <ControlContext.Provider
       value={{
@@ -44,11 +49,13 @@ export const ControlProvider = ({ children }: Props) => {
         showMenu,
         scale,
         hsv,
+        sh,
         setControlStatus,
         setNavIndex,
         setShowMenu,
         setScale,
         setHSV,
+        setSH,
       }}
     >
       {children}
