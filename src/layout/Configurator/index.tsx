@@ -8,6 +8,7 @@ import { Suspense } from 'react';
 import BackGround from 'componentsFor3D/BackGround';
 import OverlayTexture from 'componentsFor3D/OverlayTexture';
 import Navigation from 'components/Navigation';
+import Modal from 'components/Modal';
 
 export default function Configurator() {
   const ContextBridge = useContextBridge(ControlContext);
@@ -38,6 +39,7 @@ export default function Configurator() {
           className='h-full w-auto '
         />
       </Suspense>
+      <Modal />
       <Navigation />
     </div>
   );

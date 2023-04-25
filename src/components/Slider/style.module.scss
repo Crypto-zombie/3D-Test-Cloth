@@ -1,0 +1,6 @@
+.wrapper {
+    @apply mx-0 w-full flex flex-col space-y-3;
+    .text {
+        @apply flex flex-row  justify-between;
+    }
+}

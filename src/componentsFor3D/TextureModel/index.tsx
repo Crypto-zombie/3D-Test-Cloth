@@ -1,9 +1,11 @@
 import { useLoader } from '@react-three/fiber';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import * as THREE from 'three';
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
+import { ControlContext } from 'provider/ControlProvider';
 
 const TextureModel = () => {
+  const { scale } = useContext(ControlContext);
   const model = useLoader(
     OBJLoader,
     '/assets/silk_scarf/silk_scarf_3d_model.obj'
@@ -15,7 +17,7 @@ const TextureModel = () => {
 
   const material = useMemo(() => {
     const newTexture = texture.clone();
-    newTexture.repeat.set(2, 0.8);
+    newTexture.repeat.set(2 * (scale / 100), 0.8 * (scale / 100));
     newTexture.wrapS = THREE.RepeatWrapping;
     newTexture.wrapT = THREE.RepeatWrapping;
     return new THREE.MeshBasicMaterial({
@@ -23,7 +25,7 @@ const TextureModel = () => {
       lightMap: newTexture,
       transparent: true,
     });
-  }, [texture]);
+  }, [texture, scale]);
 
   model.traverse((child: any) => {
     if (child.isMesh) {
