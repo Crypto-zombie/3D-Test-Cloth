@@ -13,14 +13,21 @@ export default function Configurator() {
   return (
     <div className={'h-screen w-screen fixed ios'}>
       <Suspense fallback={null}>
-        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 1.7] }}>
+        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 2.3] }}>
           <ContextBridge>
             <OverlayTexture />
             <BackGround />
             <BasicModel />
             <TextureModel />
           </ContextBridge>
-          <OrbitControls />
+          <OrbitControls
+            enablePan={false}
+            enableZoom={false}
+            minAzimuthAngle={-0.2}
+            maxAzimuthAngle={0.2}
+            minPolarAngle={Math.PI / 2}
+            maxPolarAngle={Math.PI / 2}
+          />
           <Preload />
           <pointLight intensity={1} position={[0, 0, 5]} />
           <ambientLight intensity={0.4} />
