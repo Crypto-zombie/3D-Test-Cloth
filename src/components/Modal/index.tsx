@@ -7,7 +7,7 @@ export default function Modal() {
     useContext(ControlContext);
   console.log('hsv', hsv);
   return navIndex === 3 ? (
-    <div className='absolute top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
+    <div className='absolute bg-white top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
       <CustomSlider
         max={300}
         min={10}
@@ -27,7 +27,7 @@ export default function Modal() {
       </button>
     </div>
   ) : navIndex === 2 ? (
-    <div className='absolute top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
+    <div className='absolute bg-white top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
       <CustomSlider
         max={360}
         min={1}
@@ -69,7 +69,7 @@ export default function Modal() {
       </button>
     </div>
   ) : navIndex === 1 ? (
-    <div className='absolute top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
+    <div className='absolute bg-white top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
       <CustomSlider
         max={300}
         min={100}
@@ -100,7 +100,7 @@ export default function Modal() {
       </button>
     </div>
   ) : navIndex === 0 ? (
-    <div className='absolute top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
+    <div className='absolute bg-white top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
       <div className='flex justify-center items-center'>
         <button
           className='border border-gray-300 py-3 w-11 text-center hover:bg-slate-100'

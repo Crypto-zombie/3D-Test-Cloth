@@ -32,7 +32,10 @@ export default function Navigation() {
   console.log('document.body.offsetWidth', document.body.offsetWidth);
   useEffect(() => {
     if (isOpen) slideInEffect();
-    else slideOutEffect();
+    else {
+      setNavIndex(-1);
+      slideOutEffect();
+    }
   }, [isOpen]);
 
   return (
