@@ -11,9 +11,7 @@ import gsap from 'gsap';
 import { ControlContext } from 'provider/ControlProvider';
 export default function Home() {
   const { progress, active, loaded } = useProgress();
-  // console.log('loaded', loaded);
-  // console.log('active', active);
-  // console.log('progress', progress);
+
   const { controlStatus, setControlStatus } = useContext(ControlContext);
   const content = useRef<any>();
   const bg = useRef<any>();
@@ -35,7 +33,7 @@ export default function Home() {
     });
   };
   useEffect(() => {
-    if (loaded >= 0 && progress === 100) slideEffect();
+    if (loaded >= 11 && progress === 100) slideEffect();
   }, [loaded]);
   return !controlStatus ? (
     <div

@@ -5,7 +5,7 @@ import React, { useContext, useState } from 'react';
 export default function Modal() {
   const { scale, navIndex, setScale, sh, setSH, hsv, setHSV, setDegree } =
     useContext(ControlContext);
-  console.log('hsv', hsv);
+  // console.log('hsv', hsv);
   return navIndex === 3 ? (
     <div className='absolute bg-white top-10 left-5 p-3 drop-shadow-md shadow-md rounded-md w-52 flex flex-col justify-center space-y-3 items-start'>
       <CustomSlider

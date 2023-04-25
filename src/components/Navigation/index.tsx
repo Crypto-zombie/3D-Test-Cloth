@@ -29,7 +29,7 @@ export default function Navigation() {
       opacity: 0,
     });
   };
-  console.log('document.body.offsetWidth', document.body.offsetWidth);
+  // console.log('document.body.offsetWidth', document.body.offsetWidth);
   useEffect(() => {
     if (isOpen) slideInEffect();
     else {
